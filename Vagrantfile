@@ -3,7 +3,7 @@
 
 require 'ipaddr'
 
-prefix = "dev"
+prefix = "dev-nebulosa"
 ip = "172.16.0.12"
 xdebug = "Off"
 
