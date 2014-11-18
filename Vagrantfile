@@ -4,7 +4,7 @@
 require 'ipaddr'
 
 prefix = "dev"
-ip = "172.16.0.10"
+ip = "172.16.0.12"
 xdebug = "Off"
 
 Vagrant.configure("2") do |config|
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define "web", primary: true do |web|
     web.vm.network :private_network, ip: ip
-    web.vm.synced_folder "../fcc-drupal-cms/", "/srv/cms", :nfs => true, :nfs_version => 3
+    web.vm.synced_folder "../nebulosa-proyecto/", "/srv/cms", :nfs => true, :nfs_version => 3
     web.vm.synced_folder "database/", "/exports", :nfs => true, :nfs_version => 3
     web.vm.synced_folder "wwwconfig/", "/srv/cms/wwwconfig", :nfs => true
     web.vm.synced_folder "settings_override/", "/srv/cms/public_html/sites/settings_override", :nfs => true
